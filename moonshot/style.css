@@ -19,6 +19,7 @@ body {
     color: #332B28;
     background-color: #EAE3D9;
     margin: 0;
+    counter-reset: citation;
 }
 
 a {
@@ -95,12 +96,24 @@ figcaption {
     font-size: 80%;
 }
 
-.note {
+.note, cite {
     position: absolute;
     left: 860px;
     max-width: 350px;
     padding-right: 60px;
-    font-size: 90%;
+    font-size: 85%;
+    line-height: 1.25em;
+    text-align: left;
+    font-style: normal;
+}
+.citation-number {
+    counter-increment: citation;
+}
+cite::before, .citation-number::before {
+    content: counter(citation) ' ';
+    position: relative;
+    top: -0.4em;
+    font-size: 80%;
 }
 
 @media (max-width: 1080px) {
@@ -116,4 +129,3 @@ figcaption {
         content: ')';
     }
 }
-
