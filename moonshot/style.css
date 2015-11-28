@@ -18,7 +18,7 @@ body {
     line-height: 1.25em;
     color: #332B28;
     background-color: #EAE3D9;
-    margin: 0;
+    margin: 0 0 0 60px;
     counter-reset: citation;
 }
 
@@ -98,7 +98,7 @@ figcaption {
 
 .note, cite {
     position: absolute;
-    left: 860px;
+    left: 920px;
     max-width: 350px;
     padding-right: 60px;
     font-size: 85%;
@@ -117,15 +117,24 @@ cite::before, .citation-number::before {
 }
 
 @media (max-width: 1080px) {
-    .note {
+    body {
+        margin-left: 0;
+    }
+
+    .note, cite {
         position: static;
         padding-right: 0;
         font-size: inherit;
     }
-    .note::before {
-        content: '(';
+    .citation-number::before {
+        display: none;
     }
-    .note::after {
+    .note::before, cite::before {
+        content: '(';
+        position: static;
+        font-size: inherit;
+    }
+    .note::after, cite::after {
         content: ')';
     }
 }
