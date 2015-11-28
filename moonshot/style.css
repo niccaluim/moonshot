@@ -20,6 +20,8 @@ body {
     background-color: #EAE3D9;
     margin: 0 0 0 60px;
     counter-reset: citation;
+    counter-reset: figure;
+    counter-reset: table;
 }
 
 a {
@@ -82,7 +84,11 @@ figure {
     width: fit-content;
 }
 figure img {
+    counter-increment: figure;
     box-shadow: 0px 2px 5px 1px rgba(51, 43, 40, 0.67);
+}
+figure table {
+    counter-increment: table;
 }
 figure th {
     text-align: left;
@@ -94,6 +100,12 @@ figure th, figure td {
 figcaption {
     margin-top: 10px;
     font-size: 80%;
+}
+img + figcaption::before {
+    content: 'Fig. ' counter(figure) '. ';
+}
+table + figcaption::before {
+    content: 'Table ' counter(table) '. ';
 }
 
 .note, cite {
