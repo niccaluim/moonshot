@@ -1,21 +1,12 @@
 @font-face {
-    font-family: 'League Spartan';
-    src: url('leaguespartan-bold.woff2') format('woff2'),
-         url('leaguespartan-bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Special Elite';
-    src: url('SpecialElite.ttf') format('truetype');
+    font-family: 'Quicksand';
+    src: url('Quicksand-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Special Elite', 'Courier New', serif;
-    line-height: 1.25em;
+    font-family: 'Quicksand', sans-serif;
     color: #332B28;
     background-color: #EAE3D9;
     margin: 0 0 0 60px;
@@ -64,9 +55,9 @@ footer {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'League Spartan', 'Futura', sans-serif;
+    font-family: 'Futura', sans-serif;
     text-transform: uppercase;
-    letter-spacing: normal;
+    font-weight: normal;
 }
 
 p {
