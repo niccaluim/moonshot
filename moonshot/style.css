@@ -21,13 +21,19 @@ body {
     margin: 0;
 }
 
-#paper {
+a {
+   color: #332B28;
+   border-bottom: 1px solid #332B28;
+   text-decoration: none;
+}
+
+main {
     background: url('paper-span.jpg') repeat-y;
     background-size: 800px;
     max-width: 660px;
     padding: 0 70px;
 }
-#paper::before, #paper::after {
+main::before, main::after {
     background-repeat: no-repeat;
     background-size: 800px;
     display: block;
@@ -36,13 +42,15 @@ body {
     height: 72px;
     content: '';
 }
-#paper::before {
+main::before {
     background-image: url('paper-top.jpg');
     margin-bottom: 30px;
 }
-#paper::after { background-image: url('paper-bottom.jpg') }
+main::after {
+    background-image: url('paper-bottom.jpg')
+}
 
-#footer {
+footer {
     text-align: right;
     max-width: 790px;
     margin-bottom: 50px;
@@ -86,3 +94,26 @@ figcaption {
     margin-top: 10px;
     font-size: 80%;
 }
+
+.note {
+    position: absolute;
+    left: 860px;
+    max-width: 350px;
+    padding-right: 60px;
+    font-size: 90%;
+}
+
+@media (max-width: 1080px) {
+    .note {
+        position: static;
+        padding-right: 0;
+        font-size: inherit;
+    }
+    .note::before {
+        content: '(';
+    }
+    .note::after {
+        content: ')';
+    }
+}
+
