@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: url('leaguespartan-bold.woff2') format('woff2'),
+         url('leaguespartan-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Special Elite';
+    src: url('SpecialElite.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Special Elite', 'Courier New', serif;
+    line-height: 1.25em;
+    color: #332B28;
+    background-color: #EAE3D9;
+    margin: 0;
+}
+
+#paper {
+    background: url('paper-span.jpg') repeat-y;
+    background-size: 800px;
+    max-width: 660px;
+    padding: 0 70px;
+}
+#paper::before, #paper::after {
+    background-repeat: no-repeat;
+    background-size: 800px;
+    display: block;
+    max-width: 800px;
+    margin: 0 -70px;
+    height: 72px;
+    content: '';
+}
+#paper::before {
+    background-image: url('paper-top.jpg');
+    margin-bottom: 30px;
+}
+#paper::after { background-image: url('paper-bottom.jpg') }
+
+#footer {
+    text-align: right;
+    max-width: 790px;
+    margin-bottom: 50px;
+    font-size: 80%;
+    opacity: 0.5;
+    position: relative;
+    top: -10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'League Spartan', 'Futura', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: normal;
+}
+
+p {
+    text-align: justify;
+}
+
+em {
+    font-family: 'NotCourierSans-Bold';
+    font-style: normal;
+}
+
+figure {
+    margin: 30px auto;
+    text-align: center;
+    width: fit-content;
+}
+figure img {
+    box-shadow: 0px 2px 5px 1px rgba(51, 43, 40, 0.67);
+}
+figure th {
+    text-align: left;
+    text-decoration: underline;
+}
+figure th, figure td {
+    padding-right: 2em;
+}
+figcaption {
+    margin-top: 10px;
+    font-size: 80%;
+}
