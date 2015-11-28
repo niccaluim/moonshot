@@ -19,9 +19,9 @@ body {
     color: #332B28;
     background-color: #EAE3D9;
     margin: 0 0 0 60px;
-    counter-reset: citation;
-    counter-reset: figure;
-    counter-reset: table;
+    counter-reset: citations;
+    counter-reset: figures;
+    counter-reset: tables;
 }
 
 a {
@@ -83,12 +83,14 @@ figure {
     text-align: center;
     width: fit-content;
 }
-figure img {
-    counter-increment: figure;
-    box-shadow: 0px 2px 5px 1px rgba(51, 43, 40, 0.67);
+figure.image {
+    counter-increment: figures;
 }
-figure table {
-    counter-increment: table;
+figure.table {
+    counter-increment: tables;
+}
+figure img {
+    box-shadow: 0px 2px 5px 1px rgba(51, 43, 40, 0.67);
 }
 figure th {
     text-align: left;
@@ -101,11 +103,15 @@ figcaption {
     margin-top: 10px;
     font-size: 80%;
 }
-img + figcaption::before {
-    content: 'Fig. ' counter(figure) '. ';
+figure.image figcaption::before {
+    content: 'Fig. ' counter(figures) '. ';
 }
-table + figcaption::before {
-    content: 'Table ' counter(table) '. ';
+figure.table figcaption::before {
+    content: 'Table ' counter(tables) '. ';
+}
+img.illustration {
+    box-shadow: none;
+    mix-blend-mode: multiply;
 }
 
 .note, cite {
@@ -119,10 +125,10 @@ table + figcaption::before {
     font-style: normal;
 }
 .citation-number {
-    counter-increment: citation;
+    counter-increment: citations;
 }
 cite::before, .citation-number::before {
-    content: counter(citation) ' ';
+    content: counter(citations) ' ';
     position: relative;
     top: -0.4em;
     font-size: 80%;
